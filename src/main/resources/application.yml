@@ -1,0 +1,15 @@
+spring:
+  cloud:
+    gateway:
+      routes:
+        - id: account_service
+          uri: https://vticket-account-service.onrender.com
+          predicates:
+            - Path=/apis/vticket-account-service/v1/**
+        - id: event_service
+          uri: https://vticket-event-service.onrender.com
+          predicates:
+            - Path=/apis/vticket-event-service/v1/**
+  server:
+    port: 8080
+
